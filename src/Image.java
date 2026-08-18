@@ -22,10 +22,21 @@ public class Image {
     }
 
     public Pixel getPixel(int row, int col) {
+        if (!isValidPosition(row, col)) {
+            return null;
+        }
+
         return this.pixels[row][col];
     }
 
     public void setPixel(int row, int col, Pixel p) {
-        this.pixels[row][col] = p;
+        if (isValidPosition(row, col)) {
+            this.pixels[row][col] = p;
+        }
+    }
+
+    private boolean isValidPosition(int row, int col) {
+        return row >= 0 && row < getHeight()
+                && col >= 0 && col < getWidth();
     }
 }
