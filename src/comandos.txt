@@ -1,0 +1,34 @@
+Comandos utilizados para generar las imágenes de ejemplo
+
+Compilación:
+javac -d bin src/*.java
+
+Escala de grises:
+java -cp bin Main data/images.jpg data/grises.jpg grises
+
+Negativo:
+java -cp bin Main data/images.jpg data/negativo.jpg negativo
+
+Canal rojo:
+java -cp bin Main data/images.jpg data/rojo.jpg rojo
+
+Canal verde:
+java -cp bin Main data/images.jpg data/verde.jpg verde
+
+Canal azul:
+java -cp bin Main data/images.jpg data/azul.jpg azul
+
+Brillo (valor predeterminado 30):
+java -cp bin Main data/images.jpg data/brillo30.jpg brillo
+
+Umbral (valor predeterminado 128):
+java -cp bin Main data/images.jpg data/umbral.jpg umbral
+
+Espejo horizontal:
+java -cp bin Main data/images.jpg data/espejo.jpg espejo
+
+Rotación de 90 grados:
+java -cp bin Main data/images.jpg data/rotar.jpg rotar
+
+Prueba adicional de rotación con imagen rectangular:
+java -cp bin Main data/rectangular.jpg data/rectangular_rotada.jpg rotar
