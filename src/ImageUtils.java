@@ -17,13 +17,18 @@ public class ImageUtils {
             int width = img.getWidth();
 
             // Create pixel matrix here with appropiate dimensions.
-            Pixel[][] pixels;
+            Pixel[][] pixels = new Pixel[height][width];
 
-            // loop over BufferedImage
-            // int packed = img.getRGB(row, col);
-            // int r = (packed >> 16) & 0xFF;
-            // int g = (packed >> 8) & 0xFF;
-            // int b = packed & 0xFF;
+            //loop over BufferedImage
+            for (int row = 0; row < height; row++){
+                for (int col = 0; col<width; col++){
+                    int packed = img.getRGB(row, col);
+                    int r = (packed >> 16) & 0xFF;
+                    int g = (packed >> 8) & 0xFF;
+                    int b = packed & 0xFF;
+                    pixels [row][col] = new Pixel(r,g,b);
+                }
+            }
 
             return new Image(pixels);
         } catch (IOException e) {
@@ -42,10 +47,10 @@ public class ImageUtils {
             for (int col = 0; col < width; col++) {
                 Pixel pixel = image.getPixel(row, col);
 
-                // int r = pixel.r & 0xFF;
-                // int g = pixel.g & 0xFF;
-                // int b = pixel.b & 0xFF;
-                // img.setRGB(row, col, (r << 16) | (g << 8) | b);
+                int r = pixel.r & 0xFF;
+                int g = pixel.g & 0xFF;
+                int b = pixel.b & 0xFF;
+                img.setRGB(row, col, (r << 16) | (g << 8) | b);
             }
         }
 

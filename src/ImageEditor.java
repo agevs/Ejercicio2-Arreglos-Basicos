@@ -20,7 +20,12 @@ public class ImageEditor {
         for (int row = 0; row < og.getHeight(); row++) {
             for (int col = 0; col < og.getWidth(); col++) {
                 // apply pixel transform here
+                Pixel p = og.getPixel(row, col);
+                int r = 255 - p.r;
+                int g = 255 - p.g;
+                int b = 255 - p.b;
                 // assign pixel to `transformed` image
+                transformed.setPixel(row,col, new Pixel(r,g,b));
             }
         }
 
