@@ -1,3 +1,3 @@
-# Ejercicio 3 - Arreglos de objetos
+# Ejercicio 2 - Arreglos Básicos
 
 Nombre: Ana Gabriela Estrada Vásquez
